@@ -391,6 +391,19 @@ img { max-width: 100%; }
 .contact__col p { margin: 0; color: var(--ink-soft); line-height: 1.6; overflow-wrap: anywhere; }
 .contact__col a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; overflow-wrap: anywhere; }
 
+/* ------------------------- skyline filigree -------------------------- */
+.skyline {
+  height: 120px;
+  background: var(--gold);
+  opacity: .06;
+  -webkit-mask: url("assets/skyline.svg") no-repeat bottom center;
+  mask: url("assets/skyline.svg") no-repeat bottom center;
+  -webkit-mask-size: min(1280px, 92%) auto;
+  mask-size: min(1280px, 92%) auto;
+  pointer-events: none;
+}
+[data-theme="dark"] .skyline { background: var(--ink); opacity: .085; }
+
 /* ------------------------------- footer ------------------------------ */
 .footer {
   padding: 2rem var(--gutter) 3rem;
