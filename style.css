@@ -319,6 +319,26 @@ img { max-width: 100%; }
   font-variant-numeric: tabular-nums;
 }
 .timeline__date em { font-style: normal; opacity: .8; }
+.timeline__item--org .timeline__body { display: flex; gap: 1rem; align-items: flex-start; }
+.orgbadge {
+  flex: none;
+  width: 54px; height: 54px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--surface);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: .84rem;
+  letter-spacing: .01em;
+  line-height: 1;
+  text-align: center;
+  color: var(--gold-deep);
+  box-shadow: var(--shadow);
+}
+.orgbadge--sm { font-size: .72rem; line-height: 1.12; }
+.timeline__detail { min-width: 0; }
 .timeline__role { font-weight: 600; margin: 0 0 .1rem; }
 .timeline__org { color: var(--ink-soft); margin: 0; font-size: .95rem; }
 .timeline__note { color: var(--ink-faint); margin: .35rem 0 0; font-size: .9rem; line-height: 1.5; }
