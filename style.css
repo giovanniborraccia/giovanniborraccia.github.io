@@ -4,16 +4,16 @@
    ===================================================================== */
 
 :root {
-  --bg:        #F4F2EC;
-  --bg-alt:    #ECEAE1;
-  --surface:   #FBFAF6;
-  --ink:       #23272C;   /* graphite — primary text */
-  --ink-soft:  #545A61;   /* secondary text */
-  --ink-faint: #8C9199;   /* meta / captions */
-  --gold:      #1C7A63;   /* accent — deep emerald */
-  --gold-deep: #12594A;
-  --line:      #E1DFD6;   /* hairlines */
-  --line-soft: #EAE8DF;
+  --bg:        #F3F2F0;
+  --bg-alt:    #EAE9E6;
+  --surface:   #FBFBFA;
+  --ink:       #242229;   /* ink — primary text */
+  --ink-soft:  #55535B;   /* secondary text */
+  --ink-faint: #8B8992;   /* meta / captions */
+  --gold:      #6A2E5B;   /* accent — deep plum */
+  --gold-deep: #522347;
+  --line:      #E2E1DE;   /* hairlines */
+  --line-soft: #ECEBE8;
 
   --maxw:  960px;         /* wide band (hero, nav, sections align to this) */
   --measure: 44em;        /* readable text column cap */
@@ -26,16 +26,16 @@
 }
 
 [data-theme="dark"] {
-  --bg:        #12161A;
-  --bg-alt:    #181D22;
-  --surface:   #1B2127;
-  --ink:       #E9EAE4;
-  --ink-soft:  #AEB4AD;
-  --ink-faint: #727872;
-  --gold:      #3FB894;
-  --gold-deep: #59CBA8;
-  --line:      #262D33;
-  --line-soft: #1E252B;
+  --bg:        #16141A;
+  --bg-alt:    #1C1A22;
+  --surface:   #201E27;
+  --ink:       #EAE8ED;
+  --ink-soft:  #AEACB4;
+  --ink-faint: #726F79;
+  --gold:      #BE7BAF;
+  --gold-deep: #CE92C1;
+  --line:      #2A2833;
+  --line-soft: #201E27;
   --shadow: 0 1px 2px rgba(0,0,0,.25), 0 12px 36px rgba(0,0,0,.4);
 }
 
@@ -195,25 +195,20 @@ img { max-width: 100%; }
 .announce__inner {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: .9rem 1.25rem;
+  gap: .75rem;
+  padding: .8rem 1.15rem;
   border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--gold) 6%, var(--surface));
 }
-.announce__chip {
+.announce__dot {
   flex: none;
-  font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  color: #fff;
+  width: 8px; height: 8px;
+  border-radius: 50%;
   background: var(--gold);
-  padding: .38em .6em;
-  border-radius: 6px;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--gold) 18%, transparent);
 }
-[data-theme="dark"] .announce__chip { color: #0d1114; }
-.announce p { margin: 0; color: var(--ink-soft); font-size: .95rem; line-height: 1.5; }
+.announce p { margin: 0; color: var(--ink-soft); font-size: .92rem; line-height: 1.5; }
 .announce strong { color: var(--ink); font-weight: 600; }
 
 /* ------------------------------ sections ----------------------------- */
