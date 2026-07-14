@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%236A2E5B'/><text x='50' y='68' font-family='Georgia,serif' font-size='54' fill='%23F3F2F0' text-anchor='middle'>GB</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2316181D'/><text x='50' y='68' font-family='Georgia,serif' font-size='54' fill='%23FBFBFC' text-anchor='middle'>GB</text></svg>" />
 </head>
 <body>
   <!-- ============================ NAV ============================ -->
@@ -111,60 +111,81 @@
 
       <div class="section__body">
         <!-- ---- JOB MARKET PAPER (Paper 2) ---- -->
-        <article class="paper paper--featured">
-          <p class="paper__flag">Job Market Paper</p>
-          <h3 class="paper__title">Stock Ownership and Inflation Expectations: Evidence from the 2021–2025 Inflation Surge</h3>
-          <p class="paper__meta">Job market paper · 2026</p>
-          <p class="paper__abstract">
-            Does stock ownership shape how households form inflation expectations? Using the University
-            of Michigan Survey of Consumers and a difference-in-differences design, I show that the
-            long-stable gap between stockholders’ and non-stockholders’ one-year-ahead expectations
-            widened sharply during the 2021–2025 surge: stockholders’ expectations rose 1.70 percentage
-            points less, and their absolute forecast errors fell 1.39 points more. The divergence is
-            concentrated in the upper tail of the belief distribution and is absent in shorter episodes
-            such as 2008. A two-signal rational-inattention model, in which ownership lowers the cost of
-            processing an unbiased financial signal, reproduces the pattern: what separates 2021 from
-            2008 is the duration of the inflation episode, not its magnitude.
-          </p>
-          <div class="paper__links">
-            <a class="link-pill" href="assets/JMP_Borraccia_Stock_Ownership_Inflation_Expectations.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
-            <!-- TODO: add a slides link when ready -->
-            <a class="link-pill" href="#" data-todo="jmp-slides">Slides</a>
+        <details class="paper paper--featured">
+          <summary class="paper__summary">
+            <span class="paper__head">
+              <span class="paper__flag">Job Market Paper</span>
+              <span class="paper__title">Stock Ownership and Inflation Expectations: Evidence from the 2021–2025 Inflation Surge</span>
+              <span class="paper__meta">Job market paper · 2026 &nbsp;·&nbsp; <span class="paper__cue">read abstract</span></span>
+            </span>
+            <span class="paper__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="paper__reveal">
+            <p class="paper__abstract">
+              Does stock ownership shape how households form inflation expectations? Using the University
+              of Michigan Survey of Consumers and a difference-in-differences design, I show that the
+              long-stable gap between stockholders’ and non-stockholders’ one-year-ahead expectations
+              widened sharply during the 2021–2025 surge: stockholders’ expectations rose 1.70 percentage
+              points less, and their absolute forecast errors fell 1.39 points more. The divergence is
+              concentrated in the upper tail of the belief distribution and is absent in shorter episodes
+              such as 2008. A two-signal rational-inattention model, in which ownership lowers the cost of
+              processing an unbiased financial signal, reproduces the pattern: what separates 2021 from
+              2008 is the duration of the inflation episode, not its magnitude.
+            </p>
+            <div class="paper__links">
+              <a class="link-pill" href="assets/JMP_Borraccia_Stock_Ownership_Inflation_Expectations.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+              <!-- TODO: add a slides link when ready -->
+              <a class="link-pill" href="#" data-todo="jmp-slides">Slides</a>
+            </div>
           </div>
-        </article>
+        </details>
 
         <h3 class="subhead">Working papers &amp; work in progress</h3>
 
         <!-- ---- PAPER 1 ---- -->
-        <article class="paper">
-          <h3 class="paper__title">High Expectations: State-Dependence and Heterogeneous Pass-Through in an Augmented Euro Area Phillips Curve</h3>
-          <p class="paper__meta">Working paper</p>
-          <p class="paper__abstract">
-            Firms’ own selling-price expectations are the forward-looking force at the heart of the
-            sectoral Phillips curve, yet their pass-through into producer prices is uneven. Using
-            harmonised quarterly data for seventeen euro-area economies and nineteen sectors (2000–2023)
-            and a Dynamic Common Correlated Effects Mean Group estimator, I show that pass-through rises
-            by about two-thirds — from roughly 0.28 to 0.45 standard deviations — once a common factor
-            of cross-country expectations turns “hot”. The amplification is broad-based across
-            manufacturing, absent only in Electronics, and strongest in Core economies; an
-            Oaxaca–Blinder decomposition attributes the cross-country gradient predominantly to firms’
-            price-setting behaviour rather than to sectoral composition.
-          </p>
-          <div class="paper__links">
-            <a class="link-pill" href="assets/Borraccia_High_Expectations_Phillips_Curve.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+        <details class="paper">
+          <summary class="paper__summary">
+            <span class="paper__head">
+              <span class="paper__title">High Expectations: State-Dependence and Heterogeneous Pass-Through in an Augmented Euro Area Phillips Curve</span>
+              <span class="paper__meta">Working paper &nbsp;·&nbsp; <span class="paper__cue">read abstract</span></span>
+            </span>
+            <span class="paper__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="paper__reveal">
+            <p class="paper__abstract">
+              Firms’ own selling-price expectations are the forward-looking force at the heart of the
+              sectoral Phillips curve, yet their pass-through into producer prices is uneven. Using
+              harmonised quarterly data for seventeen euro-area economies and nineteen sectors (2000–2023)
+              and a Dynamic Common Correlated Effects Mean Group estimator, I show that pass-through rises
+              by about two-thirds — from roughly 0.28 to 0.45 standard deviations — once a common factor
+              of cross-country expectations turns “hot”. The amplification is broad-based across
+              manufacturing, absent only in Electronics, and strongest in Core economies; an
+              Oaxaca–Blinder decomposition attributes the cross-country gradient predominantly to firms’
+              price-setting behaviour rather than to sectoral composition.
+            </p>
+            <div class="paper__links">
+              <a class="link-pill" href="assets/Borraccia_High_Expectations_Phillips_Curve.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+            </div>
           </div>
-        </article>
+        </details>
 
         <!-- ---- PAPER 3 ---- -->
-        <article class="paper">
-          <!-- TODO: replace title and summary with the real details of your third paper -->
-          <h3 class="paper__title">Third dissertation paper — title forthcoming</h3>
-          <p class="paper__meta">Work in progress · IMF Statistics Department</p>
-          <p class="paper__abstract">
-            My third paper is ongoing research developed during my internship in the IMF Statistics
-            Department. [Placeholder — replace with one or two sentences on the question and approach.]
-          </p>
-        </article>
+        <details class="paper">
+          <summary class="paper__summary">
+            <span class="paper__head">
+              <!-- TODO: replace title and summary with the real details of your third paper -->
+              <span class="paper__title">Third dissertation paper — title forthcoming</span>
+              <span class="paper__meta">Work in progress · IMF Statistics Department &nbsp;·&nbsp; <span class="paper__cue">read more</span></span>
+            </span>
+            <span class="paper__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="paper__reveal">
+            <p class="paper__abstract">
+              My third paper is ongoing research developed during my internship in the IMF Statistics
+              Department. [Placeholder — replace with one or two sentences on the question and approach.]
+            </p>
+          </div>
+        </details>
       </div>
     </section>
 
@@ -216,7 +237,7 @@
           <li class="timeline__item timeline__item--org">
             <span class="timeline__date">Feb 2022 – Oct 2023</span>
             <div class="timeline__body">
-              <span class="orgbadge" aria-hidden="true">IMF</span>
+              <span class="orglogo"><img src="assets/logos/imf.svg" alt="International Monetary Fund logo" loading="lazy"></span>
               <div class="timeline__detail">
                 <p class="timeline__role">Macro Research Analyst</p>
                 <p class="timeline__org">International Monetary Fund (IMF), European Department — Washington, DC</p>
@@ -227,7 +248,7 @@
           <li class="timeline__item timeline__item--org">
             <span class="timeline__date">Sep 2021 – Feb 2022</span>
             <div class="timeline__body">
-              <span class="orgbadge orgbadge--sm" aria-hidden="true">World<br>Bank</span>
+              <span class="orglogo"><img src="assets/logos/wb.svg" alt="World Bank logo" loading="lazy"></span>
               <div class="timeline__detail">
                 <p class="timeline__role">Macroeconomic Consultant</p>
                 <p class="timeline__org">World Bank, Prospects Group — Washington, DC</p>
@@ -238,7 +259,7 @@
           <li class="timeline__item timeline__item--org">
             <span class="timeline__date">Aug 2020 – Aug 2021</span>
             <div class="timeline__body">
-              <span class="orgbadge" aria-hidden="true">ECB</span>
+              <span class="orglogo"><img src="assets/logos/ecb.svg" alt="European Central Bank logo" loading="lazy"></span>
               <div class="timeline__detail">
                 <p class="timeline__role">Research Trainee</p>
                 <p class="timeline__org">European Central Bank (ECB), DG-Economics — Frankfurt am Main</p>
@@ -249,7 +270,7 @@
           <li class="timeline__item timeline__item--org">
             <span class="timeline__date">Sep 2019 – Apr 2020</span>
             <div class="timeline__body">
-              <span class="orgbadge" aria-hidden="true">OECD</span>
+              <span class="orglogo"><img src="assets/logos/oecd.svg" alt="OECD logo" loading="lazy"></span>
               <div class="timeline__detail">
                 <p class="timeline__role">Junior Consultant</p>
                 <p class="timeline__org">OECD, Regulatory Policy Division — Paris</p>

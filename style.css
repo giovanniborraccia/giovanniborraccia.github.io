@@ -4,16 +4,16 @@
    ===================================================================== */
 
 :root {
-  --bg:        #F3F2F0;
-  --bg-alt:    #EAE9E6;
-  --surface:   #FBFBFA;
-  --ink:       #242229;   /* ink — primary text */
-  --ink-soft:  #55535B;   /* secondary text */
-  --ink-faint: #8B8992;   /* meta / captions */
-  --gold:      #6A2E5B;   /* accent — deep plum */
-  --gold-deep: #522347;
-  --line:      #E2E1DE;   /* hairlines */
-  --line-soft: #ECEBE8;
+  --bg:        #FBFBFC;   /* cool near-white */
+  --bg-alt:    #F2F3F5;   /* card / panel */
+  --surface:   #FFFFFF;
+  --ink:       #16181D;   /* near-black — primary text */
+  --ink-soft:  #565A61;   /* secondary text */
+  --ink-faint: #8B9098;   /* meta / captions */
+  --gold:      #16181D;   /* "accent" is ink — monochrome */
+  --gold-deep: #000000;
+  --line:      #E4E6E9;   /* hairlines */
+  --line-soft: #EEF0F2;
 
   --maxw:  960px;         /* wide band (hero, nav, sections align to this) */
   --measure: 44em;        /* readable text column cap */
@@ -26,17 +26,17 @@
 }
 
 [data-theme="dark"] {
-  --bg:        #16141A;
-  --bg-alt:    #1C1A22;
-  --surface:   #201E27;
-  --ink:       #EAE8ED;
-  --ink-soft:  #AEACB4;
-  --ink-faint: #726F79;
-  --gold:      #BE7BAF;
-  --gold-deep: #CE92C1;
-  --line:      #2A2833;
-  --line-soft: #201E27;
-  --shadow: 0 1px 2px rgba(0,0,0,.25), 0 12px 36px rgba(0,0,0,.4);
+  --bg:        #0E0F12;
+  --bg-alt:    #16181C;
+  --surface:   #16181C;
+  --ink:       #F0F1EF;
+  --ink-soft:  #A9ADB2;
+  --ink-faint: #71767C;
+  --gold:      #F0F1EF;
+  --gold-deep: #FFFFFF;
+  --line:      #24272C;
+  --line-soft: #1B1E22;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 36px rgba(0,0,0,.45);
 }
 
 /* ------------------------------- reset ------------------------------- */
@@ -225,7 +225,7 @@ img { max-width: 100%; }
 .section__num {
   font-family: var(--serif);
   font-size: .95rem;
-  color: var(--gold);
+  color: var(--ink-faint);
   font-weight: 600;
 }
 .section__title {
@@ -252,6 +252,37 @@ img { max-width: 100%; }
 /* ------------------------------- papers ------------------------------ */
 .paper { padding: 1.4rem 0; border-bottom: 1px solid var(--line-soft); max-width: var(--measure); }
 .paper:last-child { border-bottom: none; }
+
+/* click-to-open abstracts */
+.paper__summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+.paper__summary::-webkit-details-marker { display: none; }
+.paper__head { display: flex; flex-direction: column; gap: .35rem; min-width: 0; }
+.paper__chevron {
+  flex: none;
+  width: 9px; height: 9px;
+  margin-top: .55rem;
+  border-right: 2px solid var(--ink-faint);
+  border-bottom: 2px solid var(--ink-faint);
+  transform: rotate(45deg);
+  transition: transform .22s ease, border-color .22s ease;
+}
+.paper[open] .paper__chevron { transform: rotate(-135deg); }
+.paper__summary:hover .paper__chevron { border-color: var(--ink); }
+.paper__summary:hover .paper__title { color: var(--ink-soft); }
+.paper__cue {
+  color: var(--ink-faint);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.paper[open] .paper__cue { visibility: hidden; }
+.paper__reveal { padding-top: 1rem; }
 .paper--featured {
   max-width: var(--measure);
   background: var(--bg-alt);
@@ -274,17 +305,18 @@ img { max-width: 100%; }
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--gold-deep);
-  margin: 0 0 .5rem;
+  color: var(--ink);
+  margin: 0;
 }
 .paper__title {
   font-family: var(--serif);
   font-weight: 500;
   font-size: 1.28rem;
   line-height: 1.25;
-  margin: 0 0 .35rem;
+  margin: 0;
+  transition: color .2s ease;
 }
-.paper__meta { font-size: .88rem; color: var(--ink-faint); margin: 0 0 .8rem; }
+.paper__meta { font-size: .88rem; color: var(--ink-faint); margin: 0; }
 .paper__abstract { color: var(--ink-soft); margin: 0 0 1rem; font-size: .97rem; }
 .paper__links { display: flex; flex-wrap: wrap; gap: .5rem; }
 
@@ -319,25 +351,25 @@ img { max-width: 100%; }
   font-variant-numeric: tabular-nums;
 }
 .timeline__date em { font-style: normal; opacity: .8; }
-.timeline__item--org .timeline__body { display: flex; gap: 1rem; align-items: flex-start; }
-.orgbadge {
+.timeline__item--org .timeline__body { display: flex; gap: 1.25rem; align-items: flex-start; }
+.orglogo {
   flex: none;
-  width: 54px; height: 54px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 11px;
-  background: var(--surface);
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: .84rem;
-  letter-spacing: .01em;
-  line-height: 1;
-  text-align: center;
-  color: var(--gold-deep);
-  box-shadow: var(--shadow);
+  width: 106px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
-.orgbadge--sm { font-size: .72rem; line-height: 1.12; }
+.orglogo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(1) opacity(.68);
+  transition: filter .25s ease;
+}
+.timeline__item--org:hover .orglogo img { filter: grayscale(0) opacity(1); }
+[data-theme="dark"] .orglogo img { filter: grayscale(1) invert(1) opacity(.82); }
+[data-theme="dark"] .timeline__item--org:hover .orglogo img { filter: grayscale(1) invert(1) opacity(1); }
 .timeline__detail { min-width: 0; }
 .timeline__role { font-weight: 600; margin: 0 0 .1rem; }
 .timeline__org { color: var(--ink-soft); margin: 0; font-size: .95rem; }
@@ -394,15 +426,15 @@ img { max-width: 100%; }
 /* ------------------------- skyline filigree -------------------------- */
 .skyline {
   height: 120px;
-  background: var(--gold);
-  opacity: .06;
+  background: var(--ink);
+  opacity: .11;
   -webkit-mask: url("assets/skyline.svg") no-repeat bottom center;
   mask: url("assets/skyline.svg") no-repeat bottom center;
   -webkit-mask-size: min(1280px, 92%) auto;
   mask-size: min(1280px, 92%) auto;
   pointer-events: none;
 }
-[data-theme="dark"] .skyline { background: var(--ink); opacity: .085; }
+[data-theme="dark"] .skyline { opacity: .12; }
 
 /* ------------------------------- footer ------------------------------ */
 .footer {
