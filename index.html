@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2316181D'/><text x='50' y='68' font-family='Georgia,serif' font-size='54' fill='%23FBFBFC' text-anchor='middle'>GB</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%231F4E8C'/><text x='50' y='68' font-family='Georgia,serif' font-size='54' fill='%23FFFFFF' text-anchor='middle'>GB</text></svg>" />
 </head>
 <body>
   <!-- ============================ NAV ============================ -->
@@ -37,13 +37,13 @@
     </button>
   </header>
 
-  <!-- ===================== SECTION INDEX RAIL ===================== -->
-  <nav class="rail" aria-label="Section index">
-    <a href="#about" data-label="About"><span>01</span></a>
-    <a href="#research" data-label="Research"><span>02</span></a>
-    <a href="#cv" data-label="CV"><span>03</span></a>
-    <a href="#publications" data-label="Publications"><span>04</span></a>
-    <a href="#contact" data-label="Contact"><span>05</span></a>
+  <!-- ================= READING-POSITION RAIL ================= -->
+  <nav class="rail" aria-label="Reading position">
+    <a href="#about" data-label="About"></a>
+    <a href="#research" data-label="Research"></a>
+    <a href="#cv" data-label="CV"></a>
+    <a href="#publications" data-label="Publications"></a>
+    <a href="#contact" data-label="Contact"></a>
   </nav>
 
   <main>
@@ -143,8 +143,6 @@
             </p>
             <div class="paper__links">
               <a class="link-pill" href="assets/JMP_Borraccia_Stock_Ownership_Inflation_Expectations.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
-              <!-- TODO: add a slides link when ready -->
-              <a class="link-pill" href="#" data-todo="jmp-slides">Slides</a>
             </div>
           </div>
         </details>
@@ -211,32 +209,45 @@
 
         <h3 class="subhead">Education</h3>
         <ul class="timeline">
-          <li class="timeline__item">
+          <li class="timeline__item timeline__item--org">
             <span class="timeline__date">2023 – 2027 <em>(expected)</em></span>
             <div class="timeline__body">
-              <p class="timeline__role">PhD in Economics</p>
-              <p class="timeline__org">Geneva Graduate Institute (IHEID), Geneva</p>
+              <span class="orglogo"><img src="assets/logos/iheid.svg" alt="Geneva Graduate Institute logo" loading="lazy"></span>
+              <div class="timeline__detail">
+                <p class="timeline__role">PhD in Economics</p>
+                <p class="timeline__org">Geneva Graduate Institute (IHEID), Geneva</p>
+              </div>
             </div>
           </li>
-          <li class="timeline__item">
+          <li class="timeline__item timeline__item--org">
             <span class="timeline__date">2026</span>
             <div class="timeline__body">
-              <p class="timeline__role">Visiting PhD Fellow</p>
-              <p class="timeline__org">University of California, Berkeley</p>
+              <span class="orglogo"><img src="assets/logos/berk.svg" alt="UC Berkeley logo" loading="lazy"></span>
+              <div class="timeline__detail">
+                <p class="timeline__role">Visiting PhD Fellow</p>
+                <p class="timeline__org">University of California, Berkeley</p>
+              </div>
             </div>
           </li>
-          <li class="timeline__item">
+          <li class="timeline__item timeline__item--org">
             <span class="timeline__date">2018 – 2019</span>
             <div class="timeline__body">
-              <p class="timeline__role">MSc, Political Economy of Europe </p>
-              <p class="timeline__org">London School of Economics and Political Science (LSE)</p>
+              <span class="orglogo"><img src="assets/logos/lse.svg" alt="London School of Economics logo" loading="lazy"></span>
+              <div class="timeline__detail">
+                <p class="timeline__role">MSc, Political Economy of Europe</p>
+                <p class="timeline__org">London School of Economics and Political Science (LSE)</p>
+              </div>
             </div>
           </li>
-          <li class="timeline__item">
+          <li class="timeline__item timeline__item--org">
             <span class="timeline__date">2015 – 2018</span>
             <div class="timeline__body">
-              <p class="timeline__role">BSc, Economics </p>
-              <p class="timeline__org">University College London (UCL)</p>
+              <!-- UCL: official wordmark not freely available — clean text stand-in; drop assets/logos/ucl.svg here to replace -->
+              <span class="orglogo orglogo--text">UCL</span>
+              <div class="timeline__detail">
+                <p class="timeline__role">BSc, Economics</p>
+                <p class="timeline__org">University College London (UCL)</p>
+              </div>
             </div>
           </li>
         </ul>

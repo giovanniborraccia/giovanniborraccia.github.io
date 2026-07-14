@@ -370,6 +370,15 @@ img { max-width: 100%; }
 .timeline__item--org:hover .orglogo img { filter: grayscale(0) opacity(1); }
 [data-theme="dark"] .orglogo img { filter: grayscale(1) invert(1) opacity(.82); }
 [data-theme="dark"] .timeline__item--org:hover .orglogo img { filter: grayscale(1) invert(1) opacity(1); }
+.orglogo--text {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: .04em;
+  color: var(--ink-faint);
+  transition: color .25s ease;
+}
+.timeline__item--org:hover .orglogo--text { color: var(--ink); }
 .timeline__detail { min-width: 0; }
 .timeline__role { font-weight: 600; margin: 0 0 .1rem; }
 .timeline__org { color: var(--ink-soft); margin: 0; font-size: .95rem; }
@@ -423,59 +432,62 @@ img { max-width: 100%; }
 .contact__col p { margin: 0; color: var(--ink-soft); line-height: 1.6; overflow-wrap: anywhere; }
 .contact__col a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; overflow-wrap: anywhere; }
 
-/* ----------------------- section index rail -------------------------- */
+/* ------------------- reading-position rail --------------------------- */
 .rail { display: none; }
 @media (min-width: 1140px) {
   .rail {
     display: flex;
     flex-direction: column;
-    gap: 1.05rem;
+    gap: 1.2rem;
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    left: clamp(1.25rem, calc((100vw - var(--maxw)) / 2 - 60px), 4.5rem);
+    left: clamp(1.25rem, calc((100vw - var(--maxw)) / 2 - 44px), 4.5rem);
     z-index: 40;
   }
 }
 .rail a {
-  position: relative;
-  font-family: var(--serif);
-  font-size: .8rem;
-  font-weight: 500;
-  letter-spacing: .02em;
-  color: var(--ink-faint);
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  height: 12px;
   text-decoration: none;
-  transition: color .2s ease;
 }
+/* the tick */
+.rail a::before {
+  content: "";
+  flex: none;
+  width: 16px;
+  height: 1.5px;
+  background: var(--ink-faint);
+  opacity: .45;
+  transition: width .25s ease, background .25s ease, opacity .25s ease;
+}
+/* the label — hidden unless active or hovered */
 .rail a::after {
   content: attr(data-label);
-  position: absolute;
-  left: 178%;
-  top: 50%;
-  transform: translateY(-50%);
   white-space: nowrap;
   font-family: var(--sans);
   font-size: .68rem;
   font-weight: 500;
-  letter-spacing: .1em;
+  letter-spacing: .11em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--ink-faint);
   opacity: 0;
-  transition: opacity .2s ease;
-  pointer-events: none;
+  transform: translateX(-6px);
+  transition: opacity .25s ease, transform .25s ease, color .25s ease;
 }
-.rail a:hover { color: var(--ink); }
-.rail a:hover::after { opacity: 1; }
-.rail a.is-active { color: var(--ink); }
+.rail a:hover::before,
 .rail a.is-active::before {
-  content: "";
-  position: absolute;
-  left: -15px;
-  top: 50%;
-  width: 9px;
-  height: 1.5px;
+  width: 30px;
   background: var(--ink);
-  transform: translateY(-50%);
+  opacity: 1;
+}
+.rail a:hover::after,
+.rail a.is-active::after {
+  opacity: 1;
+  transform: none;
+  color: var(--ink);
 }
 
 /* ------------------------------- footer ------------------------------ */
