@@ -55,6 +55,25 @@
     targets.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- 3b. Section-index rail scroll-spy ---------- */
+  var railLinks = Array.prototype.slice.call(document.querySelectorAll(".rail a"));
+  if (railLinks.length && "IntersectionObserver" in window) {
+    var byId = {};
+    railLinks.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
+
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          railLinks.forEach(function (a) { a.classList.remove("is-active"); });
+          var active = byId[entry.target.id];
+          if (active) active.classList.add("is-active");
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+
+    document.querySelectorAll("main section[id]").forEach(function (s) { spy.observe(s); });
+  }
+
   /* ---------- 4. Placeholder-link guard ---------- */
   // Any link still pointing at "#" (a data-todo you haven't filled in)
   // gets a small nudge instead of jumping to the top of the page.

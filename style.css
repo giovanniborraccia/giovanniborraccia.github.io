@@ -423,18 +423,60 @@ img { max-width: 100%; }
 .contact__col p { margin: 0; color: var(--ink-soft); line-height: 1.6; overflow-wrap: anywhere; }
 .contact__col a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; overflow-wrap: anywhere; }
 
-/* ------------------------- skyline filigree -------------------------- */
-.skyline {
-  height: 120px;
-  background: var(--ink);
-  opacity: .11;
-  -webkit-mask: url("assets/skyline.svg") no-repeat bottom center;
-  mask: url("assets/skyline.svg") no-repeat bottom center;
-  -webkit-mask-size: min(1280px, 92%) auto;
-  mask-size: min(1280px, 92%) auto;
+/* ----------------------- section index rail -------------------------- */
+.rail { display: none; }
+@media (min-width: 1140px) {
+  .rail {
+    display: flex;
+    flex-direction: column;
+    gap: 1.05rem;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: clamp(1.25rem, calc((100vw - var(--maxw)) / 2 - 60px), 4.5rem);
+    z-index: 40;
+  }
+}
+.rail a {
+  position: relative;
+  font-family: var(--serif);
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: var(--ink-faint);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.rail a::after {
+  content: attr(data-label);
+  position: absolute;
+  left: 178%;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-family: var(--sans);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  opacity: 0;
+  transition: opacity .2s ease;
   pointer-events: none;
 }
-[data-theme="dark"] .skyline { opacity: .12; }
+.rail a:hover { color: var(--ink); }
+.rail a:hover::after { opacity: 1; }
+.rail a.is-active { color: var(--ink); }
+.rail a.is-active::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  width: 9px;
+  height: 1.5px;
+  background: var(--ink);
+  transform: translateY(-50%);
+}
 
 /* ------------------------------- footer ------------------------------ */
 .footer {
