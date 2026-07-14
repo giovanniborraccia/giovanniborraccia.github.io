@@ -121,15 +121,15 @@ img { max-width: 100%; }
   margin: 0 auto;
   padding: clamp(3.5rem, 9vw, 6rem) var(--pad) clamp(2.5rem, 6vw, 4rem);
   display: grid;
-  grid-template-columns: 1fr minmax(170px, 210px);
-  gap: clamp(1.5rem, 4vw, 3rem);
-  align-items: center;
+  grid-template-columns: 1fr 150px;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  align-items: start;
 }
-.hero__figure { margin: 0; }
+.hero__figure { margin: .35rem 0 0; }
 .hero__figure img {
   display: block;
   width: 100%;
-  border-radius: 14px;
+  border-radius: 10px;
   box-shadow: var(--shadow);
 }
 .hero__eyebrow {
@@ -378,7 +378,7 @@ img { max-width: 100%; }
   .timeline__item { grid-template-columns: 1fr; gap: .3rem; }
   .timeline__date { padding-top: 0; }
   .hero { grid-template-columns: 1fr; }
-  .hero__figure { order: -1; justify-self: start; max-width: 160px; }
+  .hero__figure { order: -1; justify-self: start; width: 120px; }
 }
 @media (max-width: 420px) {
   .nav { gap: .6rem; }
